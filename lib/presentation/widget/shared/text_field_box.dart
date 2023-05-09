@@ -29,6 +29,7 @@ class ChatTextFieldBox extends StatelessWidget {
                   onPressed: () {
                     final textValue = textController.value.text;
                     textController.clear();
+                    focusNode.requestFocus();
                     onValue(textValue);
                   },
                   icon: const Icon(Icons.send_rounded))),
@@ -44,8 +45,8 @@ class ChatTextFieldBox extends StatelessWidget {
       decoration: inputDecoration,
       onFieldSubmitted: (value) {
         textController.clear();
-        focusNode.requestFocus();
         onValue(value);
+        focusNode.requestFocus();
       },
     );
   }
